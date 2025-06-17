@@ -1,5 +1,8 @@
+#admod
+#android
 google.com, pub-6870212630810291, DIRECT, f08c47fec0942fa0
-
+#IOS
+google.com, pub-6870212630810291, DIRECT, f08c47fec0942fa0
 
 #Applovin
 applovin.com, 54f26fcf8cf3ffc9c982da92d6b4007a, DIRECT
