@@ -1,172 +1,449 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset='utf-8'>
-  <meta name='viewport' content='width=device-width'>
-  <title>Privacy Policy</title>
-  <style> body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; padding:1em; } </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Privacy Policy | LazyTapGame</title>
+  <meta name="description" content="Privacy Policy for LazyTapGame apps and games." />
+
+  <style>
+    :root{
+      --bg: #0b1020;
+      --panel: rgba(255,255,255,.06);
+      --card: rgba(255,255,255,.08);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.70);
+      --line: rgba(255,255,255,.14);
+      --accent: #7c3aed;
+      --accent2:#22c55e;
+      --link: #93c5fd;
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --radius: 18px;
+      --mono: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:
+        radial-gradient(1200px 600px at 20% -10%, rgba(124,58,237,.45), transparent 60%),
+        radial-gradient(1000px 520px at 90% 10%, rgba(34,197,94,.28), transparent 55%),
+        radial-gradient(900px 520px at 40% 90%, rgba(59,130,246,.22), transparent 60%),
+        var(--bg);
+      color:var(--text);
+      font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      line-height:1.65;
+    }
+
+    a{color:var(--link);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .container{max-width:1080px;margin:0 auto;padding:28px 16px 64px}
+
+    .hero{
+      border:1px solid var(--line);
+      background: linear-gradient(135deg, rgba(255,255,255,.10), rgba(255,255,255,.04));
+      border-radius: calc(var(--radius) + 6px);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .heroInner{
+      padding:26px 20px;
+      display:flex;
+      gap:16px;
+      align-items:flex-start;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.06);
+      color: var(--muted);
+      font-size:13px;
+    }
+    .dot{
+      width:10px;height:10px;border-radius:50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 0 3px rgba(124,58,237,.18);
+    }
+    h1{margin:10px 0 6px;font-size:30px;letter-spacing:.2px}
+    .subtitle{margin:0;color:var(--muted);max-width:76ch}
+
+    .meta{
+      display:flex; gap:10px; flex-wrap:wrap;
+      align-items:center; justify-content:flex-end;
+      color:var(--muted); font-size:13px;
+    }
+    .meta code{
+      font-family:var(--mono);
+      font-size:12px;
+      padding:3px 8px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.15);
+      color: rgba(255,255,255,.80);
+    }
+
+    .grid{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns: 320px 1fr;
+      gap:16px;
+      align-items:start;
+    }
+    @media (max-width: 980px){
+      .grid{grid-template-columns: 1fr}
+      .toc{position:relative; top:auto}
+    }
+
+    .toc{
+      position:sticky;
+      top:16px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.06);
+      border-radius: var(--radius);
+      padding:14px 14px 10px;
+    }
+    .toc h2{
+      margin:0 0 10px;
+      font-size:14px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color: rgba(255,255,255,.78);
+    }
+    .toc a{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding:8px 10px;
+      border-radius:12px;
+      color: rgba(255,255,255,.86);
+    }
+    .toc a:hover{background: rgba(255,255,255,.06); text-decoration:none}
+    .toc small{color:var(--muted)}
+    .pill{
+      font-size:12px;
+      padding:2px 8px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      color: rgba(255,255,255,.75);
+      white-space:nowrap;
+    }
+
+    .content{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      border-radius: var(--radius);
+      padding: 18px 18px 6px;
+      box-shadow: var(--shadow);
+    }
+    section{
+      padding: 6px 6px 18px;
+      border-bottom: 1px solid rgba(255,255,255,.10);
+    }
+    section:last-child{border-bottom:none}
+    h3{margin: 12px 0 6px;font-size: 18px}
+    .kicker{
+      display:flex;align-items:center;gap:10px;margin:10px 0 6px;
+      color: rgba(255,255,255,.88);
+      font-weight: 650;
+    }
+    .kicker span{
+      width:10px;height:10px;border-radius:50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 0 4px rgba(34,197,94,.12);
+    }
+    p{margin:10px 0;color: rgba(255,255,255,.88)}
+    ul{margin:10px 0;padding-left:18px;color: rgba(255,255,255,.88)}
+    li{margin:6px 0}
+    .note{
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.18);
+      border-radius: 16px;
+      padding: 12px 14px;
+      color: rgba(255,255,255,.86);
+    }
+    .callouts{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+      margin-top:10px;
+    }
+    @media (max-width: 760px){
+      .callouts{grid-template-columns: 1fr}
+    }
+    .card{
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      border-radius: 16px;
+      padding: 12px 14px;
+    }
+    .cardTitle{font-weight:700;margin-bottom:6px}
+    .muted{color:var(--muted)}
+    code.inline{
+      font-family:var(--mono);
+      padding:2px 6px;
+      border-radius:10px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.18);
+      color: rgba(255,255,255,.82);
+    }
+
+    footer{
+      margin-top:18px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align:center;
+    }
+
+    @media print{
+      body{background:#fff;color:#111}
+      .hero,.content,.toc{box-shadow:none}
+      .hero,.toc,.content{border:1px solid #ddd;background:#fff}
+      a{color:#111;text-decoration:underline}
+      .badge,.pill{border:1px solid #ddd;background:#fff;color:#444}
+      .dot,.kicker span{display:none}
+      .muted{color:#444}
+    }
+  </style>
 </head>
+
 <body>
+  <div class="container">
 
-<strong>Privacy Policy</strong>
-<p>
-  This Privacy Policy applies to the Triple Butterfly: Block Puzzle app (hereby referred to as "Application") for mobile devices
-  that was created by LazyTap Games (hereby referred to as "Service Provider") as an Ad Supported service.
-  This service is intended for use "AS IS".
-</p>
-<br>
+    <div class="hero">
+      <div class="heroInner">
+        <div>
+          <div class="badge"><span class="dot"></span> LazyTapGame • Privacy</div>
+          <h1>Privacy Policy</h1>
+          <p class="subtitle">
+            This Privacy Policy explains how information is collected, used, and shared when you use LazyTapGame’s applications and games.
+          </p>
+        </div>
 
-<strong>Relationship to Terms of Service</strong>
-<p>
-  This Privacy Policy should be read together with our Terms of Service.
-  By downloading, accessing, or using the Application, you agree to the collection and use of information in accordance with this Privacy Policy
-  and you agree to be bound by the Terms of Service.
-</p>
-<p>
-  Terms of Service: <a href="https://devtripleblock.github.io/terms-of-service.html" target="_blank" rel="noopener noreferrer">https://devtripleblock.github.io/terms-of-service.html</a>
-</p>
-<br>
+        <div class="meta">
+          <div><span class="muted">Effective:</span> <code>2026-02-09</code></div>
+          <div><span class="muted">Updated:</span> <code>2026-02-09</code></div>
+          <div><span class="muted">Support:</span> <code>lazytapgame@gmail.com</code></div>
+        </div>
+      </div>
+    </div>
 
-<strong>Information Collection and Use</strong>
-<p>
-  The Application may collect information when you download and use it. This information may include:
-</p>
-<ul>
-  <li>Your device's Internet Protocol address (e.g. IP address)</li>
-  <li>The pages of the Application that you visit, the time and date of your visit, and the time spent on those pages</li>
-  <li>The time spent on the Application</li>
-  <li>The operating system you use on your mobile device</li>
-</ul>
-<br>
+    <div class="grid">
+      <nav class="toc" aria-label="Table of contents">
+        <h2>On this page</h2>
+        <a href="#scope"><span>Scope</span><span class="pill">Intro</span></a>
+        <a href="#tos"><span>Terms of Service</span><small>Linked</small></a>
+        <a href="#collect"><span>Information We Collect</span><small>Auto & user</small></a>
+        <a href="#use"><span>How We Use Data</span><small>Purposes</small></a>
+        <a href="#location"><span>Location</span><small>No precise</small></a>
+        <a href="#thirdparty"><span>Third Parties</span><small>SDK list</small></a>
+        <a href="#disclosure"><span>Disclosure</span><small>Legal</small></a>
+        <a href="#optout"><span>Opt-Out</span><small>Uninstall</small></a>
+        <a href="#retention"><span>Retention</span><small>Delete</small></a>
+        <a href="#children"><span>Children</span><small>Under 13</small></a>
+        <a href="#security"><span>Security</span><small>Safeguards</small></a>
+        <a href="#changes"><span>Changes</span><small>Updates</small></a>
+        <a href="#consent"><span>Your Consent</span><small>Agreement</small></a>
+        <a href="#contact"><span>Contact</span><small>Email</small></a>
+      </nav>
 
-<p>
-  The Application does not gather precise information about the location of your mobile device.
-</p>
-<br>
+      <article class="content">
+        <section id="scope">
+          <div class="kicker"><span></span> Scope</div>
+          <p>
+            This Privacy Policy applies to the Triple Butterfly: Block Puzzle app (the “Application”) for mobile devices that was created by
+            LazyTap Games (the “Service Provider”) as an Ad Supported service. This service is intended for use “AS IS”.
+          </p>
+        </section>
 
-<p>
-  For a better experience, while using the Application, the Service Provider may require you to provide certain personally identifiable information (if applicable).
-  Any information requested will be retained and used as described in this Privacy Policy.
-</p>
-<br>
+        <section id="tos">
+          <div class="kicker"><span></span> Relationship to Terms of Service</div>
+          <p>
+            This Privacy Policy should be read together with our Terms of Service. By downloading, accessing, or using the Application,
+            you agree to this Privacy Policy and the Terms of Service.
+          </p>
+          <div class="note">
+            Terms of Service:
+            <a href="https://devtripleblock.github.io/terms-of-service.html" target="_blank" rel="noopener noreferrer">https://devtripleblock.github.io/terms-of-service.html</a>
+          </div>
+        </section>
 
-<strong>How We Use Information</strong>
-<p>
-  We may use collected information (as applicable) to:
-</p>
-<ul>
-  <li>Provide and maintain the Application and its features</li>
-  <li>Provide customer support</li>
-  <li>Analyze usage to improve performance and user experience</li>
-  <li>Monitor and protect the security and integrity of the Application</li>
-  <li>Detect, prevent, and address technical issues</li>
-  <li>Send service-related messages such as important notices or required updates</li>
-</ul>
-<br>
+        <section id="collect">
+          <div class="kicker"><span></span> Information Collection and Use</div>
+          <p>The Application collects information when you download and use it. This information may include:</p>
+          <ul>
+            <li>Your device’s Internet Protocol address (e.g., IP address)</li>
+            <li>The pages of the Application you visit, the time and date of your visit, and the time spent on those pages</li>
+            <li>The time spent on the Application</li>
+            <li>The operating system you use on your mobile device</li>
+          </ul>
 
-<strong>Advertising</strong>
-<p>
-  The Application is supported by advertising. Ads may be served by third-party ad networks.
-  These partners may use identifiers and other information from your device to provide and measure ads, in accordance with their own privacy policies.
-</p>
-<br>
+          <div class="callouts">
+            <div class="card">
+              <div class="cardTitle">User-provided information (if applicable)</div>
+              <div class="muted">
+                For a better experience, the Service Provider may require you to provide certain personally identifiable information.
+                Any information requested will be retained and used as described in this Privacy Policy.
+              </div>
+            </div>
+            <div class="card">
+              <div class="cardTitle">Service messages</div>
+              <div class="muted">
+                The Service Provider may contact you from time to time to provide important information and required notices.
+                (Marketing promotions may apply only if such communications are enabled for the Application.)
+              </div>
+            </div>
+          </div>
+        </section>
 
-<strong>Third Party Access</strong>
-<p>
-  Only aggregated, anonymized data may be periodically transmitted to external services to aid the Service Provider in improving the Application and the Service.
-  The Service Provider may share your information with third parties in the ways that are described in this Privacy Policy.
-</p>
-<br>
+        <section id="use">
+          <div class="kicker"><span></span> How We Use Information</div>
+          <p>We may use collected information (as applicable) to:</p>
+          <ul>
+            <li>Provide and maintain the Application</li>
+            <li>Provide customer support</li>
+            <li>Gather analysis to improve the Application and the Service</li>
+            <li>Monitor usage and performance</li>
+            <li>Detect, prevent, and address technical issues and abuse</li>
+            <li>Send service-related communications (important notices, updates)</li>
+          </ul>
+          <p class="muted">
+            The Application is supported by advertising. Ad partners may use device identifiers and similar information to serve and measure ads,
+            subject to their own privacy policies.
+          </p>
+        </section>
 
-<p>
-  Please note that the Application utilizes third-party services that have their own Privacy Policies about handling data.
-  Below are the links to the Privacy Policies of the third-party service providers that may be used by the Application:
-</p>
-<ul>
-  <li><a href="https://www.google.com/policies/privacy/" target="_blank" rel="noopener noreferrer">Google Play Services</a></li>
-  <li><a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank" rel="noopener noreferrer">AdMob</a></li>
-  <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Google Analytics for Firebase</a></li>
-  <li><a href="https://firebase.google.com/support/privacy/" target="_blank" rel="noopener noreferrer">Firebase Crashlytics</a></li>
-  <li><a href="https://www.facebook.com/about/privacy/update/printable" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-  <li><a href="https://unity3d.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Unity</a></li>
-  <li><a href="https://gameanalytics.com/privacy" target="_blank" rel="noopener noreferrer">GameAnalytics</a></li>
-  <li><a href="https://www.applovin.com/privacy/" target="_blank" rel="noopener noreferrer">AppLovin</a></li>
-  <li><a href="https://vungle.com/privacy/" target="_blank" rel="noopener noreferrer">Vungle</a></li>
-  <li><a href="https://www.adcolony.com/privacy-policy/" target="_blank" rel="noopener noreferrer">AdColony</a></li>
-  <li><a href="https://www.adjust.com/terms/privacy-policy" target="_blank" rel="noopener noreferrer">Adjust</a></li>
-</ul>
-<br>
+        <section id="location">
+          <div class="kicker"><span></span> Location</div>
+          <div class="note">
+            The Application does not gather precise information about the location of your mobile device.
+          </div>
+        </section>
 
-<strong>Disclosure of Information</strong>
-<p>
-  The Service Provider may disclose User Provided and Automatically Collected Information:
-</p>
-<ul>
-  <li>as required by law, such as to comply with a subpoena, or similar legal process;</li>
-  <li>when they believe in good faith that disclosure is necessary to protect their rights, protect your safety or the safety of others, investigate fraud, or respond to a government request;</li>
-  <li>with trusted service providers who work on their behalf, do not have an independent use of the information disclosed to them, and have agreed to adhere to the rules set forth in this Privacy Policy.</li>
-</ul>
-<br>
+        <section id="thirdparty">
+          <div class="kicker"><span></span> Third Party Access</div>
+          <p>
+            Only aggregated, anonymized data is periodically transmitted to external services to aid the Service Provider in improving the Application and their service.
+            The Service Provider may share your information with third parties in the ways described in this Privacy Policy.
+          </p>
 
-<strong>Opt-Out Rights</strong>
-<p>
-  You can stop all collection of information by the Application easily by uninstalling it.
-  You may use the standard uninstall processes as may be available as part of your mobile device or via the mobile application marketplace or network.
-</p>
-<br>
+          <h3>Third-party service providers</h3>
+          <p class="muted">
+            The Application utilizes third-party services that have their own Privacy Policies about handling data. Below are links to their Privacy Policies:
+          </p>
 
-<strong>Data Retention Policy</strong>
-<p>
-  The Service Provider will retain User Provided data for as long as you use the Application and for a reasonable time thereafter.
-  If you'd like them to delete User Provided Data that you have provided via the Application, please contact them at
-  <a href="mailto:lazytapgame@gmail.com">lazytapgame@gmail.com</a> and they will respond in a reasonable time.
-</p>
-<br>
+          <ul>
+            <li><a href="https://www.google.com/policies/privacy/" target="_blank" rel="noopener noreferrer">Google Play Services</a></li>
+            <li><a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank" rel="noopener noreferrer">AdMob</a></li>
+            <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Google Analytics for Firebase</a></li>
+            <li><a href="https://firebase.google.com/support/privacy/" target="_blank" rel="noopener noreferrer">Firebase Crashlytics</a></li>
+            <li><a href="https://www.facebook.com/about/privacy/update/printable" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+            <li><a href="https://unity3d.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Unity</a></li>
+            <li><a href="https://gameanalytics.com/privacy" target="_blank" rel="noopener noreferrer">GameAnalytics</a></li>
+            <li><a href="https://www.applovin.com/privacy/" target="_blank" rel="noopener noreferrer">AppLovin</a></li>
+            <li><a href="https://vungle.com/privacy/" target="_blank" rel="noopener noreferrer">Vungle</a></li>
+            <li><a href="https://www.adcolony.com/privacy-policy/" target="_blank" rel="noopener noreferrer">AdColony</a></li>
+            <li><a href="https://www.adjust.com/terms/privacy-policy" target="_blank" rel="noopener noreferrer">Adjust</a></li>
+          </ul>
+        </section>
 
-<strong>Children</strong>
-<p>
-  The Application does not address anyone under the age of 13.
-  The Service Provider does not knowingly collect personally identifiable information from children under 13 years of age.
-  If the Service Provider discovers that a child under 13 has provided personal information, the Service Provider will immediately delete this from their records.
-  If you are a parent or guardian and you are aware that your child has provided personal information, please contact the Service Provider at
-  <a href="mailto:lazytapgame@gmail.com">lazytapgame@gmail.com</a>.
-</p>
-<br>
+        <section id="disclosure">
+          <div class="kicker"><span></span> Disclosure of Information</div>
+          <p>The Service Provider may disclose User Provided and Automatically Collected Information:</p>
+          <ul>
+            <li>as required by law, such as to comply with a subpoena, or similar legal process;</li>
+            <li>when they believe in good faith that disclosure is necessary to protect their rights, protect your safety or the safety of others, investigate fraud, or respond to a government request;</li>
+            <li>with trusted service providers who work on their behalf, do not have an independent use of the information disclosed to them, and have agreed to adhere to the rules set forth in this privacy statement.</li>
+          </ul>
+        </section>
 
-<strong>Security</strong>
-<p>
-  The Service Provider is concerned about safeguarding the confidentiality of your information.
-  The Service Provider provides physical, electronic, and procedural safeguards to protect information the Service Provider processes and maintains.
-</p>
-<br>
+        <section id="optout">
+          <div class="kicker"><span></span> Opt-Out Rights</div>
+          <div class="note">
+            You can stop all collection of information by the Application easily by uninstalling it.
+            You may use the standard uninstall processes available as part of your mobile device or via the mobile application marketplace or network.
+          </div>
+        </section>
 
-<strong>Changes</strong>
-<p>
-  This Privacy Policy may be updated from time to time for any reason.
-  The Service Provider will notify you of any changes to the Privacy Policy by updating this page with the new Privacy Policy.
-  You are advised to consult this Privacy Policy regularly for any changes, as continued use is deemed approval of all changes.
-</p>
-<br>
+        <section id="retention">
+          <div class="kicker"><span></span> Data Retention Policy</div>
+          <p>
+            The Service Provider will retain User Provided data for as long as you use the Application and for a reasonable time thereafter.
+            If you'd like them to delete User Provided Data that you have provided via the Application, please contact:
+            <a href="mailto:lazytapgame@gmail.com">lazytapgame@gmail.com</a>.
+          </p>
+        </section>
 
-<p>This Privacy Policy is effective as of 2026-02-09</p>
-<br>
+        <section id="children">
+          <div class="kicker"><span></span> Children</div>
+          <p>
+            The Application does not address anyone under the age of 13. The Service Provider does not knowingly collect personally identifiable information
+            from children under 13 years of age. If the Service Provider discovers that a child under 13 has provided personal information,
+            the Service Provider will immediately delete this from their records. If you are a parent or guardian and you are aware that your child has provided
+            personal information, please contact the Service Provider at <a href="mailto:lazytapgame@gmail.com">lazytapgame@gmail.com</a>.
+          </p>
+        </section>
 
-<strong>Your Consent</strong>
-<p>
-  By using the Application, you are consenting to the processing of your information as set forth in this Privacy Policy now and as amended by us.
-</p>
-<br>
+        <section id="security">
+          <div class="kicker"><span></span> Security</div>
+          <p>
+            The Service Provider is concerned about safeguarding the confidentiality of your information.
+            The Service Provider provides physical, electronic, and procedural safeguards to protect information the Service Provider processes and maintains.
+          </p>
+        </section>
 
-<strong>Contact Us</strong>
-<p>
-  If you have any questions regarding privacy while using the Application, or have questions about the practices, please contact the Service Provider via email at
-  <a href="mailto:lazytapgame@gmail.com">lazytapgame@gmail.com</a>.
-</p>
+        <section id="changes">
+          <div class="kicker"><span></span> Changes</div>
+          <p>
+            This Privacy Policy may be updated from time to time for any reason.
+            The Service Provider will notify you of any changes by updating this page with the new Privacy Policy.
+            You are advised to consult this Privacy Policy regularly for any changes, as continued use is deemed approval of all changes.
+          </p>
+          <div class="note">This privacy policy is effective as of <strong>2026-02-09</strong>.</div>
+        </section>
 
-<hr>
-<p>
-  This privacy policy page was prepared for LazyTap Games to align with its Terms of Service and third-party services list.
-</p>
+        <section id="consent">
+          <div class="kicker"><span></span> Your Consent</div>
+          <p>
+            By using the Application, you are consenting to the processing of your information as set forth in this Privacy Policy now and as amended by us.
+          </p>
+        </section>
 
+        <section id="contact">
+          <div class="kicker"><span></span> Contact Us</div>
+          <div class="callouts">
+            <div class="card">
+              <div class="cardTitle">Support Email</div>
+              <div class="muted">
+                <a href="mailto:lazytapgame@gmail.com">lazytapgame@gmail.com</a>
+              </div>
+            </div>
+            <div class="card">
+              <div class="cardTitle">About this page</div>
+              <div class="muted">
+                This Privacy Policy was prepared for LazyTap Games and aligned with its Terms of Service and third-party services list.
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+
+    <footer>
+      © <span id="y"></span> LazyTapGame. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
